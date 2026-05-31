@@ -16,9 +16,9 @@
 
         <h1>Trámites JohnF</h1>
 
-        <input type="text" placeholder="Usuario">
+        <input type="text" id="usuario" placeholder="Usuario">
 
-        <input type="password" placeholder="Contraseña">
+        <input type="password" id="password" placeholder="Contraseña">
 
         <button onclick="ingresar()">
             Ingresar
@@ -29,9 +29,14 @@
     <!-- SISTEMA -->
     <div id="sistema" class="oculto">
 
+        <!-- MENU LATERAL -->
         <div class="sidebar">
 
-            <h2>JohnF</h2>
+            <h2>Trámites JohnF</h2>
+
+            <div class="logo-sidebar">
+                <img src="img/logo.png" alt="Logo JohnF" class="logo-menu">
+            </div>
 
             <button onclick="mostrarSeccion('dashboard')">
                 Dashboard
@@ -49,12 +54,17 @@
                 Cotizaciones
             </button>
 
-            <button onclick="mostrarSeccion('vencimientos')">
-                Vencimientos
+            <button onclick="mostrarSeccion('valores')">
+                Valores
+            </button>
+
+            <button onclick="cerrarSesion()" class="cerrar-btn">
+                Cerrar Sesión
             </button>
 
         </div>
 
+        <!-- CONTENIDO -->
         <div class="contenido">
 
             <!-- DASHBOARD -->
@@ -66,12 +76,12 @@
 
                     <div class="card">
                         <h3>Clientes</h3>
-                        <p>150</p>
+                        <p id="cantidadClientes">2</p>
                     </div>
 
                     <div class="card">
                         <h3>Vehículos</h3>
-                        <p>220</p>
+                        <p id="cantidadVehiculos">1</p>
                     </div>
 
                     <div class="card">
@@ -93,24 +103,39 @@
 
                 <h1>Clientes</h1>
 
-                <table>
+                <button class="agregar-btn" onclick="agregarCliente()">
+                    ➕ Agregar Cliente
+                </button>
+
+                <table id="tablaClientes">
 
                     <tr>
                         <th>Nombre</th>
                         <th>Teléfono</th>
                         <th>Correo</th>
+                        <th>Acciones</th>
                     </tr>
 
                     <tr>
                         <td>Juan Pérez</td>
                         <td>3001234567</td>
                         <td>juan@email.com</td>
+                        <td>
+                            <button onclick="editarCliente(this)">
+                                ✏️ Editar
+                            </button>
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Laura Gómez</td>
                         <td>3019876543</td>
                         <td>laura@email.com</td>
+                        <td>
+                            <button onclick="editarCliente(this)">
+                                ✏️ Editar
+                            </button>
+                        </td>
                     </tr>
 
                 </table>
@@ -122,24 +147,36 @@
 
                 <h1>Vehículos</h1>
 
-                <table>
+                <button class="agregar-btn" onclick="agregarVehiculo()">
+                    ➕ Agregar Vehículo
+                </button>
+
+                <table id="tablaVehiculos">
 
                     <tr>
                         <th>Placa</th>
-                        <th>Tipo</th>
+                        <th>Ciudad</th>
                         <th>Cliente</th>
+                        <th>Vencimiento SOAT</th>
+                        <th>Estado</th>
+                        <th>Vencimiento Tecnomecánica</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
 
                     <tr>
                         <td>ABC123</td>
-                        <td>Automóvil</td>
+                        <td>Medellín</td>
                         <td>Juan Pérez</td>
-                    </tr>
-
-                    <tr>
-                        <td>XYZ987</td>
-                        <td>Motocicleta</td>
-                        <td>Laura Gómez</td>
+                        <td>15/12/2026</td>
+                        <td class="verde">Vigente</td>
+                        <td>10/10/2026</td>
+                        <td class="verde">Vigente</td>
+                        <td>
+                            <button onclick="editarVehiculo(this)">
+                                ✏️ Editar
+                            </button>
+                        </td>
                     </tr>
 
                 </table>
@@ -154,52 +191,116 @@
                 <form>
 
                     <label>Cliente</label>
-                    <input type="text">
+                    <input type="text" id="clienteCotizacion">
 
-                    <label>Vehículo</label>
-                    <input type="text">
+                    <label>Ciudad</label>
+                    <select id="ciudadCotizacion">
 
-                    <label>Tipo de Trámite</label>
-                    <select>
-                        <option>Traspaso</option>
-                        <option>Matrícula</option>
-                        <option>Licencia</option>
+                        <option>Medellín</option>
+                        <option>Bello</option>
+                        <option>Envigado</option>
+                        <option>Itagüí</option>
+                        <option>Sabaneta</option>
+                        <option>La Estrella</option>
+                        <option>Copacabana</option>
+                        <option>Girardota</option>
+                        <option>Barbosa</option>
+                        <option>Caldas</option>
+
                     </select>
 
-                    <label>Valor</label>
-                    <input type="text">
+                    <label>Trámite</label>
+                    <select id="tramiteCotizacion">
 
-                    <button type="button">
-                        Generar Cotización
+                        <option>Traspaso</option>
+                        <option>Levantamiento de prenda</option>
+                        <option>Inscripción de prenda</option>
+                        <option>Matrícula inicial</option>
+                        <option>Traslado de cuenta</option>
+
+                    </select>
+
+                    <button type="button" onclick="calcularCotizacion()">
+                        Calcular Cotización
                     </button>
+
+                    <div id="resultadoCotizacion"></div>
 
                 </form>
 
             </section>
 
-            <!-- VENCIMIENTOS -->
-            <section id="vencimientos" class="seccion oculto">
+            <!-- VALORES -->
+            <section id="valores" class="seccion oculto">
 
-                <h1>Vencimientos</h1>
+                <h1>Valores de Trámites</h1>
 
                 <table>
 
                     <tr>
-                        <th>Cliente</th>
-                        <th>Documento</th>
-                        <th>Estado</th>
+                        <th>Ciudad</th>
+                        <th>Trámite</th>
+                        <th>Valor</th>
                     </tr>
 
                     <tr>
-                        <td>Juan Pérez</td>
-                        <td>SOAT</td>
-                        <td class="verde">Vigente</td>
+                        <td>Medellín</td>
+                        <td>Traspaso</td>
+                        <td>$210.000</td>
                     </tr>
 
                     <tr>
-                        <td>Laura Gómez</td>
-                        <td>Tecnomecánica</td>
-                        <td class="amarillo">Próximo a vencer</td>
+                        <td>Bello</td>
+                        <td>Traspaso</td>
+                        <td>$200.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Envigado</td>
+                        <td>Traspaso</td>
+                        <td>$190.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Itagüí</td>
+                        <td>Traspaso</td>
+                        <td>$180.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sabaneta</td>
+                        <td>Traspaso</td>
+                        <td>$170.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>La Estrella</td>
+                        <td>Traspaso</td>
+                        <td>$160.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Copacabana</td>
+                        <td>Traspaso</td>
+                        <td>$150.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Girardota</td>
+                        <td>Traspaso</td>
+                        <td>$140.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Barbosa</td>
+                        <td>Traspaso</td>
+                        <td>$130.000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Caldas</td>
+                        <td>Traspaso</td>
+                        <td>$120.000</td>
                     </tr>
 
                 </table>

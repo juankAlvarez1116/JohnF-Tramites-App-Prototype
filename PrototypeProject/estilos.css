@@ -2,18 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    background: #f4f4f4;
+    background-color: #f4f6f9;
 }
 
 .oculto {
     display: none;
 }
 
-/* LOGIN */
+/* ==========================
+   LOGIN
+========================== */
 
 .login-container {
     height: 100vh;
@@ -22,124 +24,255 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    background-color: #f4f6f9;
 }
 
 .logo {
-    width: 150px;
+    width: 180px;
+}
+
+.login-container h1 {
+    color: #1f2937;
 }
 
 .login-container input {
-    width: 250px;
-    padding: 10px;
+    width: 280px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 .login-container button {
-    width: 250px;
-    padding: 10px;
-    background: #2563eb;
-    color: white;
+    width: 280px;
+    padding: 12px;
     border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
     cursor: pointer;
 }
 
-/* SISTEMA */
+    .login-container button:hover {
+        background-color: #1d4ed8;
+    }
+
+/* ==========================
+   SISTEMA
+========================== */
 
 #sistema {
     display: flex;
     min-height: 100vh;
 }
 
+/* ==========================
+   MENU LATERAL
+========================== */
+
 .sidebar {
-    width: 220px;
-    background: #1f2937;
+    width: 260px;
+    background-color: #1f2937;
     color: white;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
     .sidebar h2 {
-        margin-bottom: 30px;
+        text-align: center;
+        margin-bottom: 15px;
     }
 
-    .sidebar button {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 10px;
-        border: none;
-        cursor: pointer;
-        background: #374151;
-        color: white;
+.logo-sidebar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-menu {
+    width: 140px;
+    max-width: 100%;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #374151;
+    color: white;
+    transition: 0.3s;
+}
+
+    .sidebar button:hover {
+        background-color: #2563eb;
     }
 
-        .sidebar button:hover {
-            background: #2563eb;
-        }
+.cerrar-btn {
+    margin-top: auto;
+    background-color: #dc2626 !important;
+}
+
+    .cerrar-btn:hover {
+        background-color: #b91c1c !important;
+    }
+
+/* ==========================
+   CONTENIDO
+========================== */
 
 .contenido {
     flex: 1;
     padding: 30px;
 }
 
+    .contenido h1 {
+        margin-bottom: 20px;
+        color: #1f2937;
+    }
+
+/* ==========================
+   DASHBOARD
+========================== */
+
 .cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
 }
 
 .card {
     background: white;
-    padding: 20px;
-    width: 180px;
-    text-align: center;
+    width: 220px;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
 }
 
-    .card p {
-        font-size: 30px;
-        margin-top: 10px;
+    .card h3 {
+        color: #374151;
     }
 
-/* TABLAS */
+    .card p {
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #2563eb;
+    }
+
+/* ==========================
+   BOTONES
+========================== */
+
+.agregar-btn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+    .agregar-btn:hover {
+        background-color: #15803d;
+    }
+
+table button {
+    background-color: #f59e0b;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+    table button:hover {
+        background-color: #d97706;
+    }
+
+/* ==========================
+   TABLAS
+========================== */
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     background: white;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
 }
 
 th {
-    background: #2563eb;
+    background-color: #2563eb;
     color: white;
+    padding: 14px;
 }
 
-/* FORMULARIO */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f3f4f6;
+}
+
+/* ==========================
+   FORMULARIOS
+========================== */
 
 form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    max-width: 500px;
+    gap: 12px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
 }
 
-input, select {
+input,
+select {
     padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 form button {
-    background: #2563eb;
+    background-color: #2563eb;
     color: white;
     border: none;
     padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-/* ESTADOS */
+    form button:hover {
+        background-color: #1d4ed8;
+    }
+
+/* ==========================
+   COTIZACION
+========================== */
+
+#resultadoCotizacion {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #eff6ff;
+    border-left: 5px solid #2563eb;
+    font-weight: bold;
+}
+
+/* ==========================
+   ESTADOS
+========================== */
 
 .verde {
     color: green;
@@ -148,5 +281,10 @@ form button {
 
 .amarillo {
     color: orange;
+    font-weight: bold;
+}
+
+.rojo {
+    color: red;
     font-weight: bold;
 }
