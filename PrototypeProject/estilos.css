@@ -13,9 +13,7 @@ body {
     display: none;
 }
 
-/* ==========================
-   LOGIN
-========================== */
+/* Login */
 
 .login-container {
     height: 100vh;
@@ -57,18 +55,14 @@ body {
         background-color: #1d4ed8;
     }
 
-/* ==========================
-   SISTEMA
-========================== */
+/* Sistem */
 
 #sistema {
     display: flex;
     min-height: 100vh;
 }
 
-/* ==========================
-   MENU LATERAL
-========================== */
+/* Side menu */
 
 .sidebar {
     width: 260px;
@@ -119,9 +113,7 @@ body {
         background-color: #b91c1c !important;
     }
 
-/* ==========================
-   CONTENIDO
-========================== */
+/* Content */
 
 .contenido {
     flex: 1;
@@ -133,9 +125,7 @@ body {
         color: #1f2937;
     }
 
-/* ==========================
-   DASHBOARD
-========================== */
+/* Dashboard */
 
 .cards {
     display: flex;
@@ -165,9 +155,7 @@ body {
         color: #2563eb;
     }
 
-/* ==========================
-   BOTONES
-========================== */
+/* Buttons */
 
 .agregar-btn {
     background-color: #16a34a;
@@ -196,9 +184,7 @@ table button {
         background-color: #d97706;
     }
 
-/* ==========================
-   TABLAS
-========================== */
+/* Tables */
 
 table {
     width: 100%;
@@ -223,9 +209,7 @@ tr:hover {
     background-color: #f3f4f6;
 }
 
-/* ==========================
-   FORMULARIOS
-========================== */
+/* Forms */
 
 form {
     background: white;
@@ -258,9 +242,7 @@ form button {
         background-color: #1d4ed8;
     }
 
-/* ==========================
-   COTIZACION
-========================== */
+/* Cotization */
 
 #resultadoCotizacion {
     margin-top: 20px;
@@ -270,9 +252,7 @@ form button {
     font-weight: bold;
 }
 
-/* ==========================
-   ESTADOS
-========================== */
+/* States for validity */
 
 .verde {
     color: green;
