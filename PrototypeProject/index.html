@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trámites JohnF</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <div id="login" class="login-container">
+
+        <img src="img/logo.png" alt="Logo JohnF" class="logo">
+
+        <h1>Trámites JohnF</h1>
+
+        <input type="text" placeholder="Usuario">
+
+        <input type="password" placeholder="Contraseña">
+
+        <button onclick="ingresar()">
+            Ingresar
+        </button>
+
+    </div>
+
+    <!-- SISTEMA -->
+    <div id="sistema" class="oculto">
+
+        <div class="sidebar">
+
+            <h2>JohnF</h2>
+
+            <button onclick="mostrarSeccion('dashboard')">
+                Dashboard
+            </button>
+
+            <button onclick="mostrarSeccion('clientes')">
+                Clientes
+            </button>
+
+            <button onclick="mostrarSeccion('vehiculos')">
+                Vehículos
+            </button>
+
+            <button onclick="mostrarSeccion('cotizaciones')">
+                Cotizaciones
+            </button>
+
+            <button onclick="mostrarSeccion('vencimientos')">
+                Vencimientos
+            </button>
+
+        </div>
+
+        <div class="contenido">
+
+            <!-- DASHBOARD -->
+            <section id="dashboard" class="seccion">
+
+                <h1>Dashboard</h1>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Clientes</h3>
+                        <p>150</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Vehículos</h3>
+                        <p>220</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Cotizaciones</h3>
+                        <p>75</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Alertas</h3>
+                        <p>12</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CLIENTES -->
+            <section id="clientes" class="seccion oculto">
+
+                <h1>Clientes</h1>
+
+                <table>
+
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                    </tr>
+
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>3001234567</td>
+                        <td>juan@email.com</td>
+                    </tr>
+
+                    <tr>
+                        <td>Laura Gómez</td>
+                        <td>3019876543</td>
+                        <td>laura@email.com</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+            <!-- VEHICULOS -->
+            <section id="vehiculos" class="seccion oculto">
+
+                <h1>Vehículos</h1>
+
+                <table>
+
+                    <tr>
+                        <th>Placa</th>
+                        <th>Tipo</th>
+                        <th>Cliente</th>
+                    </tr>
+
+                    <tr>
+                        <td>ABC123</td>
+                        <td>Automóvil</td>
+                        <td>Juan Pérez</td>
+                    </tr>
+
+                    <tr>
+                        <td>XYZ987</td>
+                        <td>Motocicleta</td>
+                        <td>Laura Gómez</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+            <!-- COTIZACIONES -->
+            <section id="cotizaciones" class="seccion oculto">
+
+                <h1>Cotizaciones</h1>
+
+                <form>
+
+                    <label>Cliente</label>
+                    <input type="text">
+
+                    <label>Vehículo</label>
+                    <input type="text">
+
+                    <label>Tipo de Trámite</label>
+                    <select>
+                        <option>Traspaso</option>
+                        <option>Matrícula</option>
+                        <option>Licencia</option>
+                    </select>
+
+                    <label>Valor</label>
+                    <input type="text">
+
+                    <button type="button">
+                        Generar Cotización
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- VENCIMIENTOS -->
+            <section id="vencimientos" class="seccion oculto">
+
+                <h1>Vencimientos</h1>
+
+                <table>
+
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Documento</th>
+                        <th>Estado</th>
+                    </tr>
+
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>SOAT</td>
+                        <td class="verde">Vigente</td>
+                    </tr>
+
+                    <tr>
+                        <td>Laura Gómez</td>
+                        <td>Tecnomecánica</td>
+                        <td class="amarillo">Próximo a vencer</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

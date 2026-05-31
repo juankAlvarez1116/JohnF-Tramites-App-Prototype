@@ -1,0 +1,152 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.oculto {
+    display: none;
+}
+
+/* LOGIN */
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.login-container input {
+    width: 250px;
+    padding: 10px;
+}
+
+.login-container button {
+    width: 250px;
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* SISTEMA */
+
+#sistema {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #1f2937;
+    color: white;
+    padding: 20px;
+}
+
+    .sidebar h2 {
+        margin-bottom: 30px;
+    }
+
+    .sidebar button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: none;
+        cursor: pointer;
+        background: #374151;
+        color: white;
+    }
+
+        .sidebar button:hover {
+            background: #2563eb;
+        }
+
+.contenido {
+    flex: 1;
+    padding: 30px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+}
+
+    .card p {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+/* TABLAS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+}
+
+/* FORMULARIO */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+input, select {
+    padding: 10px;
+}
+
+form button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px;
+}
+
+/* ESTADOS */
+
+.verde {
+    color: green;
+    font-weight: bold;
+}
+
+.amarillo {
+    color: orange;
+    font-weight: bold;
+}

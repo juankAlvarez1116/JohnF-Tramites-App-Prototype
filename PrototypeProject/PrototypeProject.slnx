@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Code/">
+    <File Path="estilos.css" />
+    <File Path="index.html" />
+    <File Path="script.js" />
+  </Folder>
+</Solution>
