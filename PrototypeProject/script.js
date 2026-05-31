@@ -4,6 +4,9 @@ function ingresar() {
 
     document.getElementById("sistema").classList.remove("oculto");
 
+function cerrarSesion() {
+    document.getElementById("sistema").classList.add("oculto");
+    document.getElementById("login").style.display = "flex";
 }
 
 function mostrarSeccion(id) {
