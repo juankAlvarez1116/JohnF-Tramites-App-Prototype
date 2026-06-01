@@ -1,6 +1,6 @@
 <Solution>
   <Folder Name="/Code/">
-    <File Path="estilos.css" />
+    <File Path="design.css" />
     <File Path="index.html" />
     <File Path="Logo.jpeg" />
     <File Path="script.js" />

@@ -68,7 +68,7 @@ function calcularCotizacion() {
     document.getElementById(
         "resultadoCotizacion"
     ).innerHTML =
-        "Valor trámite: $250.000<br>" +
+        "Valor trámite: $150.000<br>" +
         "Servicio JohnF: $100.000<br><br>" +
-        "<strong>Total: $350.000</strong>";
+        "<strong>Total: $250.000</strong>";
 }
